@@ -1,0 +1,11 @@
+-- Write a query against the Sales.Orders table that returns orders placed on the last day of the month
+
+SELECT 
+orderid
+,orderdate
+,customerid
+,empid
+
+FROM Sales.Orders
+
+WHERE orderdate = EOMONTH(orderdate);  -- learned EOMONTH function, very useful
