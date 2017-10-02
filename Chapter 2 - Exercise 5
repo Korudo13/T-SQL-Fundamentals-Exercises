@@ -1,0 +1,17 @@
+/* To check the validity of the data, write a query against the HR.Employees table that returns employees
+   with a last name that starts with the lowercase English letter in the range a through z.
+   Remember that that collation of the sample database is case insensitive (Latin1_General_CI_AS)
+*/
+
+SELECT
+empid
+,lastname
+
+FROM HR.Employees
+
+--WHERE lastname COLLATE Latin1_General_CI_AS LIKE N'[a-z]%'  -- includes both upper and lower case, not correct
+
+WHERE lastname COLLATE Latin1_General_CI_AS LIKE N'[abcdefghijklmnopqrstuvwxyz]%' -- explicitly only includes lower case
+
+
+--https://stackoverflow.com/questions/10025032/what-is-the-meaning-of-the-prefix-n-in-t-sql-statements
