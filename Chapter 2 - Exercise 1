@@ -1,0 +1,12 @@
+-- Write a query against the Sales.Orders table that returns orders placed in June 2015.
+
+SELECT 
+orderid
+,orderdate
+,customerid
+,empid
+
+FROM Sales.Orders
+
+WHERE orderdate >= 20150601
+AND orderdate < 20150701;
